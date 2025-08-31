@@ -11,17 +11,17 @@ export default function IntegrationsSection() {
             <Integration
               icon={<Notion />}
               name="Notion"
-              description="Store notes, tasks, and project information automatically."
+              description="Make notes, tasks, and edit documents with natural language commands."
             />
             <Integration
               icon={<Slack />}
               name="Slack"
-              description="Send team messages and notifications instantly."
+              description="Send messages to team and notifications instantly."
             />
             <Integration
               icon={<Gmail />}
               name="Gmail"
-              description="Compose and send emails with natural language commands."
+              description="Compose and send emails to tanmay@zyx members and clients."
             />
           </div>
         </div>
