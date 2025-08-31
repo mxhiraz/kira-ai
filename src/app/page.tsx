@@ -8,6 +8,12 @@ import IntegrationsSection from "@/components/integrations-6";
 export default function Home() {
   return (
     <>
+      <div
+        className=" absolute top-[-100] right-[-50]  blur-[50px] opacity-20 w-auto md:h-[200px] bg-gradient-to-r from-pink-100 to-pink-300 
+            animate-[blob_8s_infinite_ease-in-out] 
+            rounded-[50%_40%_60%_50%_/_50%_60%_40%_50%]"
+      ></div>
+      <div className=" absolute top-[-100] left-[-50]  blur-[50px] opacity-20 w-full md:h-[200px] bg-gradient-to-r from-[#F39845] to-[#F16316]/50 animate-[blob_8s_infinite_ease-in-out] rounded-[50%_40%_60%_50%_/_50%_60%_40%_50%]"></div>
       <HeroSection />
       <ContentSection />
       <IntegrationsSection />
@@ -21,12 +27,6 @@ export default function Home() {
 function HeroSection() {
   return (
     <section className="py-20 pb-16 ">
-      <div
-        className=" absolute top-[-100] right-[-50]  blur-[50px] opacity-20 w-full md:h-[200px] bg-gradient-to-r from-pink-100 to-pink-300 
-            animate-[blob_8s_infinite_ease-in-out] 
-            rounded-[50%_40%_60%_50%_/_50%_60%_40%_50%]"
-      ></div>
-      <div className=" absolute top-[-100] left-[-50]  blur-[50px] opacity-20 w-full md:h-[200px] bg-gradient-to-r from-[#F39845] to-[#F16316]/50 animate-[blob_8s_infinite_ease-in-out] rounded-[50%_40%_60%_50%_/_50%_60%_40%_50%]"></div>
       <div className="relative z-10 mx-auto w-full max-w-2xl px-6 lg:px-0">
         <div className="relative text-center">
           <MistKitLogo className="mx-auto" />
