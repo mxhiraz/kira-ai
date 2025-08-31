@@ -1,103 +1,135 @@
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
 import Image from "next/image";
+import { cn } from "@/lib/utils";
+import { Zap, Calendar, Search, Send } from "lucide-react";
+import IntegrationsSection from "@/components/integrations-6";
 
 export default function Home() {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+    <>
+      <HeroSection />
+      <ContentSection />
+      <IntegrationsSection />
+      <p className="text-muted-foreground pb-4 text-xs text-center">
+        Made with ❤️ by Kira team
+      </p>
+    </>
   );
 }
+
+function HeroSection() {
+  return (
+    <section className="py-20 pb-16 ">
+      <div
+        className=" absolute top-[-100] right-[-50]  blur-[50px] opacity-20 w-full md:h-[200px] bg-gradient-to-r from-pink-100 to-pink-300 
+            animate-[blob_8s_infinite_ease-in-out] 
+            rounded-[50%_40%_60%_50%_/_50%_60%_40%_50%]"
+      ></div>
+      <div className=" absolute top-[-100] left-[-50]  blur-[50px] opacity-20 w-full md:h-[200px] bg-gradient-to-r from-[#F39845] to-[#F16316]/50 animate-[blob_8s_infinite_ease-in-out] rounded-[50%_40%_60%_50%_/_50%_60%_40%_50%]"></div>
+      <div className="relative z-10 mx-auto w-full max-w-2xl px-6 lg:px-0">
+        <div className="relative text-center">
+          <MistKitLogo className="mx-auto" />
+          <h1 className="mx-auto mt-16 max-w-xl text-balance text-5xl font-medium">
+            Kira
+          </h1>
+          <p className="text-muted-foreground mx-auto mb-2 mt-4 text-balance text-xl font-medium">
+            Siri on Steroids
+          </p>
+          <p className="text-muted-foreground max-w-xl mx-auto mb-6 mt-4 text-balance text-lg">
+            Your AI assistant that floats above everything. No app switching, no
+            new tabs - just ask Kira to get things done. Press ⌘ + K anywhere.
+          </p>
+
+          <div className="flex flex-col items-center gap-2 *:w-full sm:flex-row sm:justify-center sm:*:w-auto">
+            <Button asChild variant="neutral">
+              <Link href="#features">
+                <span className="text-nowrap">Join Waitlist</span>
+              </Link>
+            </Button>
+            <Button asChild variant="ghost">
+              <Link href="/learn-more">
+                <span className="text-nowrap">Learn More</span>
+              </Link>
+            </Button>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function ContentSection() {
+  const features = [
+    {
+      title: "Universal Access",
+      description:
+        '"Check my calendar for tomorrow" - no need to open calendar app.',
+      icon: Calendar,
+    },
+    {
+      title: "Quick Actions",
+      description:
+        '"Find the latest sales report and share with team" - saves 5 minutes.',
+      icon: Zap,
+    },
+    {
+      title: "Instant Communication",
+      description:
+        '"Send meeting summary to John and Sarah" - done while still in meeting.',
+      icon: Send,
+    },
+    {
+      title: "Smart Automation",
+      description:
+        '"Record meeting → Make notes → Save to Notion" - one command.',
+      icon: Search,
+    },
+  ];
+
+  return (
+    <section className="py-16 ">
+      <div className="mx-auto max-w-5xl space-y-8 px-6 md:space-y-12">
+        <div className="mx-auto max-w-xl space-y-6 text-center md:space-y-12">
+          <h2 className="text-balance text-4xl font-medium lg:text-5xl">
+            One Hotkey, Endless Possibilities
+          </h2>
+          <p className="text-muted-foreground">
+            ⌘ + K activates Kira anywhere. Reduce context switching with voice
+            or text commands that work across all your apps instantly.
+          </p>
+        </div>
+        <img
+          className="rounded-lg grayscale hover:grayscale-0 transition-all duration-300"
+          src="/kira.webp"
+          alt="AI assistant visualization"
+          loading="lazy"
+        />
+
+        <div className="relative mx-auto grid grid-cols-2 gap-x-3 gap-y-6 sm:gap-8 lg:grid-cols-4">
+          {features.map((feature) => (
+            <div key={feature.title} className="space-y-3">
+              <div className="flex items-center gap-2">
+                <feature.icon className="size-4" />
+                <h3 className="text-sm font-medium">{feature.title}</h3>
+              </div>
+              <p className="text-muted-foreground text-sm">
+                {feature.description}
+              </p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+const MistKitLogo = ({ className }: { className?: string }) => (
+  <Image
+    src={"/logo.png"}
+    alt="Kira AI Logo"
+    width={150}
+    height={150}
+    className={cn("h-16 w-16", className)}
+  />
+);
