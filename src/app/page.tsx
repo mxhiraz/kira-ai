@@ -43,7 +43,7 @@ function HeroSection() {
 
           <div className="flex flex-col items-center gap-2 *:w-full sm:flex-row sm:justify-center sm:*:w-auto">
             <Button asChild variant="neutral">
-              <Link href="#features">
+              <Link href="https://tally.so/r/mZMv7z">
                 <span className="text-nowrap">Join Waitlist</span>
               </Link>
             </Button>
